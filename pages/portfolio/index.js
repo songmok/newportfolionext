@@ -1,10 +1,17 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import samplePic from "../../public/sample.png";
-import { TOKEN, DATABASE_ID } from "../../config";
+import { TOKEN, DATABASE_ID, DATABASE_ID2 } from "../../config";
 import ProjectItem from "../../components/ProjectItem";
+import CloneItem from "../../components/CloneItem";
 
-const Portfolio = ({ projects }) => {
+const Portfolio = ({ projects, projects2 }) => {
+  const [activeTab, setActiveTab] = useState("tab1");
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
     <section className="text-gray-600 body-font">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -12,13 +19,49 @@ const Portfolio = ({ projects }) => {
           Portfolio : {projects.results.length}
         </h1>
       </div>
-      <div className="container px-5 py-5 mx-auto">
-        <div className="flex flex-wrap -m-4">
-          {projects.results.map((v) => (
-            <ProjectItem key={v.id} data={v} />
-          ))}
-        </div>
+
+      <div className="container flex mx-auto px-5 mb-4">
+        <button
+          className={`${
+            activeTab === "tab1"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-200 text-gray-800"
+          } text-sm font-medium py-2 px-4 rounded-l-lg focus:outline-none`}
+          onClick={() => handleTabClick("tab1")}
+        >
+          Portfolio 1
+        </button>
+        <button
+          className={`${
+            activeTab === "tab2"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-200 text-gray-800"
+          } text-sm font-medium py-2 px-4 rounded-r-lg focus:outline-none`}
+          onClick={() => handleTabClick("tab2")}
+        >
+          Portfolio 2
+        </button>
       </div>
+
+      {activeTab === "tab1" && projects?.results && (
+        <div className="container px-5 py-5 mx-auto">
+          <div className="flex flex-wrap -m-4">
+            {projects.results.map((v) => (
+              <ProjectItem key={v.id} data={v} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {activeTab === "tab2" && projects2?.results && (
+        <div className="container px-5 py-5 mx-auto">
+          <div className="flex flex-wrap -m-4">
+            {projects2.results.map((v) => (
+              <CloneItem key={v.id} data={v} />
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 };
@@ -50,11 +93,16 @@ export async function getStaticProps() {
     `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
     options
   );
+  const res2 = await fetch(
+    `https://api.notion.com/v1/databases/${DATABASE_ID2}/query`,
+    options
+  );
 
   const projects = await res.json();
+  const projects2 = await res2.json();
 
   return {
-    props: { projects },
+    props: { projects, projects2 },
     revalidate: 10,
   };
 }
