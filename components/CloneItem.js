@@ -31,12 +31,12 @@ const CloneItem = ({ data }) => {
             </span>
           ))}
         </h3>
-        <h2 className="text-lg text-gray-900 dark:text-slate-600 font-medium title-font mb-4">
+        <h2 className="text-lg text-gray-900 dark:text-slate-600 font-bold title-font mb-4">
           {title}
         </h2>
         <div className="text-xs font-medium">
           <a
-            className="dark:hover:text-slate-500"
+            className="dark:hover:text-slate-500 font-bold"
             href={RepUrl}
             target="_blank"
           >

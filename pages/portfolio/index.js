@@ -16,7 +16,9 @@ const Portfolio = ({ projects, projects2 }) => {
     <section className="text-gray-600 body-font">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-          Portfolio : {projects.results.length}
+          {activeTab === "tab1"
+            ? `Portfolio : ${projects.results.length}`
+            : `Clonesite : ${projects2.results.length}`}
         </h1>
       </div>
 
@@ -29,7 +31,7 @@ const Portfolio = ({ projects, projects2 }) => {
           } text-sm font-medium py-2 px-4 rounded-l-lg focus:outline-none`}
           onClick={() => handleTabClick("tab1")}
         >
-          Portfolio 1
+          Portfolio
         </button>
         <button
           className={`${
@@ -39,7 +41,7 @@ const Portfolio = ({ projects, projects2 }) => {
           } text-sm font-medium py-2 px-4 rounded-r-lg focus:outline-none`}
           onClick={() => handleTabClick("tab2")}
         >
-          Portfolio 2
+          CloneSite
         </button>
       </div>
 

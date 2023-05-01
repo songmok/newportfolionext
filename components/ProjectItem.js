@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/legacy/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 const ProjectItem = ({ data }) => {
   // console.log("==============");
   // console.log(data);
@@ -53,19 +54,19 @@ const ProjectItem = ({ data }) => {
             </span>
           ))}
         </h3>
-        <h2 className="text-lg text-gray-900 dark:text-slate-600 font-medium title-font mb-4">
-          {title}
-        </h2>
-        {/* <p className="leading-relaxed text-base">{description}</p> */}
-        <div className="text-xs font-medium">
+        <div className="flex items-center">
+          <h2 className="text-base text-gray-900 dark:text-slate-600 font-bold mr-3 title-font">
+            {title}
+          </h2>
           <a
-            className="dark:hover:text-slate-500"
+            className="dark:hover:text-slate-500 text-sm block w-1 mr-2"
             href={gitUrl}
             target="_blank"
           >
-            <FontAwesomeIcon icon={faGithub} />
+            <FontAwesomeIcon icon={faGithub} className="w-5" />
           </a>
         </div>
+
         <div className="text-xs font-medium mt-4">
           작업기간 : {start} ~ {end} ({calculatedPeriod(start, end)}) 일
         </div>

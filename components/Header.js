@@ -26,8 +26,8 @@ const Header = () => {
             <Link legacyBehavior href="/">
               <a className="mr-5 hover:text-gray-900">Home</a>
             </Link>
-            <Link legacyBehavior href="/profile">
-              <a className="mr-5 hover:text-gray-900">Profile</a>
+            <Link legacyBehavior href="/stacks">
+              <a className="mr-5 hover:text-gray-900">Stacks</a>
             </Link>
             <Link legacyBehavior href="/portfolio">
               <a className="mr-5 hover:text-gray-900">Portfolio</a>
