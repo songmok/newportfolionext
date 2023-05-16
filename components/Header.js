@@ -35,9 +35,9 @@ const Header = () => {
             <Link legacyBehavior href="/life">
               <a className="mr-5 hover:text-gray-900">Life</a>
             </Link>
-            <Link legacyBehavior href="/vision">
+            {/* <Link legacyBehavior href="/vision">
               <a className="mr-5 hover:text-gray-900">Vision</a>
-            </Link>
+            </Link> */}
           </nav>
           {/* dark 모드 적용 */}
           <DarkModeButton />

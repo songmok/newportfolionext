@@ -2,6 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  trailingSlash: true,
+  assetPrefix: ".",
   images: {
     domains: [
       "images.unsplash.com",
