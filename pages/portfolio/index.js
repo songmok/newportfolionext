@@ -17,8 +17,12 @@ const Portfolio = ({ projects, projects2 }) => {
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
           {activeTab === "tab1"
-            ? `Portfolio : ${projects.results.length}`
-            : `Clonesite : ${projects2.results.length}`}
+            ? projects &&
+              projects.results &&
+              `Portfolio : ${projects.results.length}`
+            : projects2 &&
+              projects2.results &&
+              `Clonesite : ${projects2.results.length}`}
         </h1>
       </div>
       <div className="container flex mx-auto px-5 mb-4">

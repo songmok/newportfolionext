@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/legacy/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-solid-svg-icons";
+
 const CloneItem = ({ data }) => {
   const title = data.properties.Name.title[0].plain_text;
   const siteUrl = data.url;
