@@ -11,9 +11,7 @@ const Portfolio = ({ projects, projects2 }) => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-  if (!projects || !projects2) {
-    return <div>Loading...</div>;
-  }
+
   return (
     <section className="text-gray-600 body-font">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -23,7 +21,6 @@ const Portfolio = ({ projects, projects2 }) => {
             : `Clonesite : ${projects2.results.length}`}
         </h1>
       </div>
-
       <div className="container flex mx-auto px-5 mb-4">
         <button
           className={`${
@@ -46,7 +43,6 @@ const Portfolio = ({ projects, projects2 }) => {
           CloneSite
         </button>
       </div>
-
       {activeTab === "tab1" && projects?.results && (
         <div className="container px-5 py-5 mx-auto">
           <div className="flex flex-wrap -m-4">
@@ -56,7 +52,6 @@ const Portfolio = ({ projects, projects2 }) => {
           </div>
         </div>
       )}
-
       {activeTab === "tab2" && projects2?.results && (
         <div className="container px-5 py-5 mx-auto">
           <div className="flex flex-wrap -m-4">
