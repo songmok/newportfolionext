@@ -11,7 +11,9 @@ const Portfolio = ({ projects, projects2 }) => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-
+  if (!projects || !projects2) {
+    return <div>Loading...</div>;
+  }
   return (
     <section className="text-gray-600 body-font">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
