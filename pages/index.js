@@ -13,10 +13,13 @@ export default function Home() {
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
               프론트엔드 개발자&nbsp;
               <br className="hidden lg:inline-block" />
-              오한수
+              오한수 입니다.
             </h1>
             <p className="mb-8 leading-relaxed">
-              노션 DB 연동 NEXT PORTFOLIO
+              - 항상 기술과 디자인 트렌드를 주시하며 새로운 걸 배우고 있습니다.
+              <br />- 다수의 팀 프로젝트로 협업을 위한 자세가 준비되어 있습니다.
+              <br />- 사용자를 위해 항상 고민합니다.
+              <br />
             </p>
             <div className="flex justify-center">
               <Link legacyBehavior href="/portfolio">
