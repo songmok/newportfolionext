@@ -1,6 +1,4 @@
-import Image from "next/image";
 import React, { useState } from "react";
-import samplePic from "../../public/sample.png";
 import { TOKEN, DATABASE_ID, DATABASE_ID2 } from "../../config";
 import ProjectItem from "../../components/ProjectItem";
 import CloneItem from "../../components/CloneItem";
@@ -15,18 +13,19 @@ const Portfolio = ({ projects, projects2 }) => {
   return (
     <section className="text-gray-600 body-font">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        {/* <h1 className="title-font sm:text-4xl text-3xl mb-4 mr-10 font-medium  text-gray-900">
+          Project : {projects.results.length}
+        </h1>
         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-          {activeTab === "tab1"
-            ? projects &&
-              projects.results &&
-              `Portfolio : ${projects.results.length}`
-            : projects2 &&
-              projects2.results &&
-              `Clonesite : ${projects2.results.length}`}
+          Clonesite : {projects2.results.length}
+        </h1> */}
+        <h1 className="title-font sm:text-4xl text-3xl mb-4 mr-10 font-medium text-gray-900">
+          Portfolio: {projects.results.length + projects2.results.length}
         </h1>
       </div>
+
       <div className="container flex mx-auto px-5 mb-4">
-        <button
+        {/* <button
           className={`${
             activeTab === "tab1"
               ? "bg-blue-500 text-white"
@@ -34,7 +33,7 @@ const Portfolio = ({ projects, projects2 }) => {
           } text-sm font-medium py-2 px-4 rounded-l-lg focus:outline-none`}
           onClick={() => handleTabClick("tab1")}
         >
-          Portfolio
+          Project
         </button>
         <button
           className={`${
@@ -45,9 +44,9 @@ const Portfolio = ({ projects, projects2 }) => {
           onClick={() => handleTabClick("tab2")}
         >
           CloneSite
-        </button>
+        </button> */}
       </div>
-      {activeTab === "tab1" && projects?.results && (
+      {/* {activeTab === "tab1" && projects?.results && (
         <div className="container px-5 py-5 mx-auto">
           <div className="flex flex-wrap -m-4">
             {projects.results.map((v) => (
@@ -64,7 +63,21 @@ const Portfolio = ({ projects, projects2 }) => {
             ))}
           </div>
         </div>
-      )}
+      )} */}
+      <div className="container px-5 py-5 mx-auto">
+        <div className="flex flex-wrap -m-4">
+          {projects.results.map((v) => (
+            <ProjectItem key={v.id} data={v} />
+          ))}
+        </div>
+      </div>
+      <div className="container px-5 py-5 mx-auto">
+        <div className="flex flex-wrap -m-4">
+          {projects2.results.map((v) => (
+            <CloneItem key={v.id} data={v} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

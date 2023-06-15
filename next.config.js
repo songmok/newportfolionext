@@ -11,6 +11,13 @@ const nextConfig = {
       "www.notion.so",
     ],
   },
+  server: {
+    webSocketProxy: {
+      path: "/_next/webpack-hmr",
+      target: "http://localhost:5000",
+      ws: true,
+    },
+  },
 };
 
 module.exports = nextConfig;

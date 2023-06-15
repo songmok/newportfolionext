@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 5000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -13,11 +13,13 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@notionhq/client": "^2.2.5",
     "next": "13.2.4",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-lottie-player": "^1.5.4"
+    "react-lottie-player": "^1.5.4",
+    "react-modal": "^3.16.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

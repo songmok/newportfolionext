@@ -46,8 +46,9 @@ const ProjectItem = ({ data }) => {
           />
         </a>
         <h3 className="tracking-widest text-indigo-500 dark:text-slate-600 text-xs font-medium title-font mb-4 mt-4">
-          {tags.map((item) => (
+          {tags.map((item, num) => (
             <span
+              key={num}
               className={`tag ${item.color} inline-block py-1 px-2 font-bold uppercase rounded-md bg-purple-500 text-white mr-2`}
             >
               {item.name}
