@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TOKEN, DATABASE_ID, DATABASE_ID2 } from "../../config";
-import ProjectItem from "../../components/ProjectItem";
-import CloneItem from "../../components/CloneItem";
+import ProjectItem from "../../components/projectsite/ProjectItem";
+import CloneItem from "../../components/clonesite/CloneItem";
 
 const Portfolio = ({ projects, projects2 }) => {
   return (

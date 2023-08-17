@@ -4,14 +4,14 @@ import Modal from "react-modal";
 const CloneModal = ({
   RepEmb,
   closeModal,
-  isModalOpen,
+  ModalOpen,
   title,
   siteUrl,
   RepUrl,
 }) => {
   return (
     <>
-      {isModalOpen && (
+      {ModalOpen && (
         <Modal
           isOpen={true} // Use a state variable to control the modal open/close state
           onRequestClose={closeModal} // Function to close the modal

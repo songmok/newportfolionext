@@ -14,13 +14,13 @@ const CloneItem = ({ data }) => {
   console.log(`tags:${data.properties.Tags.multi_select}`);
   const RepEmb = RepUrl + "?embed=1";
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [ModalOpen, setModalOpen] = useState(false);
   const openModal = () => {
-    setIsModalOpen(true);
+    setModalOpen(true);
   };
 
   const closeModal = () => {
-    setIsModalOpen(false);
+    setModalOpen(false);
   };
 
   return (
@@ -31,7 +31,7 @@ const CloneItem = ({ data }) => {
         title={title}
         siteUrl={siteUrl}
         closeModal={closeModal}
-        isModalOpen={isModalOpen}
+        ModalOpen={ModalOpen}
       />
       <div className="project-card my-4">
         <div className="bg-gray-100 p-4 rounded-lg ">
