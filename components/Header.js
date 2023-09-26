@@ -12,7 +12,10 @@ const Header = () => {
           name="description"
           content="프론트엔드 개발자 오한수 포트폴리오"
         />
-        <meta name="keyword" content="React.js, Next.js, portflio, 오한수" />
+        <meta
+          name="keyword"
+          content="React.js, Next.js, portflio, 오한수, 프론트엔드, 웹, 앱, 개발자, 개발"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className="text-gray-600 body-font">
@@ -39,8 +42,8 @@ const Header = () => {
               <a className="mr-5 hover:text-gray-900">Vision</a>
             </Link> */}
           </nav>
-          {/* dark 모드 적용 */}
           <DarkModeButton />
+          {/* dark 모드 적용 */}
         </div>
       </header>
     </>

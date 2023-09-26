@@ -1,15 +1,14 @@
-import React from "react";
-import Image from "next/legacy/image";
+import React, { useEffect, useState } from "react";
+
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const ProjectItem = ({ data }) => {
   // console.log("==============");
-  // console.log(data);
-  const title = data.properties.Name.title[0].plain_text;
-  // const description = data.properties.Description.rich_text[0].plain_text;
+  const title = data.properties.Name.title[0].text.content;
   const siteUrl = data.url;
-  const imgUrl = data.cover.external?.url || data.cover.file.url;
+  const imgUrl = data.cover?.external?.url || data.cover?.file?.url;
   const gitUrl = data.properties.Git.url;
   const tags = data.properties.Tags.multi_select; // 배열[]
   const start = data.properties.Dated.date.start;
@@ -32,6 +31,7 @@ const ProjectItem = ({ data }) => {
     const result = diffInMs / (1000 * 60 * 60 * 24);
     return result;
   };
+
   return (
     <div className="project-card my-4">
       <div className="bg-gray-100 p-4 rounded-lg ">
@@ -39,9 +39,9 @@ const ProjectItem = ({ data }) => {
           <Image
             className="h-40 rounded w-full object-cover object-center mb-14"
             src={imgUrl}
-            width="100%"
-            height="60%"
-            layout="responsive"
+            width={1920}
+            priority
+            height={960}
             alt="content"
           />
         </a>
@@ -56,7 +56,7 @@ const ProjectItem = ({ data }) => {
           ))}
         </h3>
         <div className="flex items-center">
-          <h2 className="text-base text-gray-900 dark:text-slate-600 font-bold mr-3 title-font">
+          <h2 className="text-base whitespace-nowrap text-gray-900 dark:text-slate-600 font-bold mr-3 title-font">
             {title}
           </h2>
           <a

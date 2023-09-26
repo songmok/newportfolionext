@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import CloneModal from "./CloneModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -8,7 +8,7 @@ const CloneItem = ({ data }) => {
   const gitUrl = data.properties.Git.url;
   const title = data.properties.Name.title[0].plain_text;
   const siteUrl = data.url;
-  const imgUrl = data.cover.external?.url || data.cover.file.url;
+  const imgUrl = data.cover?.external?.url || data.cover?.file?.url;
   const RepUrl = data.properties.Replit.url;
   const tags = data.properties.Tags.multi_select; // 배열[]
   console.log(`tags:${data.properties.Tags.multi_select}`);
@@ -47,9 +47,9 @@ const CloneItem = ({ data }) => {
             <Image
               className="h-40 rounded w-full object-cover object-center mb-14"
               src={imgUrl}
-              width="100%"
-              height="60%"
-              layout="responsive"
+              priority
+              width={1920}
+              height={960}
               alt="content"
             />
           </a>

@@ -5,7 +5,6 @@ import { ProjectItemCss } from "./ProjectItemStyled";
 const ProjectModal = ({
   projectModalOpen,
   closeProjectModal,
-
   title,
   siteUrl,
 }) => {

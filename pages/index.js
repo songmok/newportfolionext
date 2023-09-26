@@ -1,5 +1,5 @@
 import Link from "next/link";
-import DevAni from "../utils/DevAni";
+// import DevAni from "../utils/DevAni";
 
 export default function Home() {
   return (
@@ -24,9 +24,9 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex justify-center lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+          {/* <div className="flex justify-center lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
             <DevAni />
-          </div>
+          </div> */}
         </div>
       </section>
     </>
