@@ -33,7 +33,7 @@ const CloneItem = ({ data }) => {
         closeModal={closeModal}
         ModalOpen={ModalOpen}
       />
-      <div className="project-card my-4">
+      <div className="project-card my-4 w-3/4">
         <div className="bg-gray-100 p-4 rounded-lg ">
           <a
             href="#"

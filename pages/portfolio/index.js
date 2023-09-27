@@ -6,23 +6,25 @@ import CloneItem from "../../components/clonesite/CloneItem";
 const Portfolio = ({ projects, projects2 }) => {
   return (
     <section className="text-gray-600 body-font">
-      <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-        <h1 className="title-font sm:text-4xl text-3xl mb-4 mr-10 font-medium text-gray-900">
+      <div className="container mx-auto flex px-5 py-24 flex-col items-center">
+        <h1 className="title-font sm:text-4xl text-3xl font-medium text-gray-900">
           Portfolio: {projects.results.length + projects2.results.length}
         </h1>
       </div>
-      <div className="container px-5 py-5 mx-auto">
-        <div className="flex flex-wrap -m-4">
-          {projects.results.map((v) => (
-            <ProjectItem key={v.id} data={v} />
-          ))}
+      <div className="flex flex-col md:block">
+        <div className="container px-5 py-5 mx-auto">
+          <div className="flex flex-wrap justify-center -m-4 ">
+            {projects.results.map((v) => (
+              <ProjectItem key={v.id} data={v} />
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="container px-5 py-5 mx-auto">
-        <div className="flex flex-wrap -m-4">
-          {projects2.results.map((v) => (
-            <CloneItem key={v.id} data={v} />
-          ))}
+        <div className="container px-5 py-5 mx-auto">
+          <div className="flex flex-wrap justify-center -m-4">
+            {projects2.results.map((v) => (
+              <CloneItem key={v.id} data={v} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

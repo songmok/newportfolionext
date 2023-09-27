@@ -33,7 +33,7 @@ const ProjectItem = ({ data }) => {
   };
 
   return (
-    <div className="project-card my-4">
+    <div className="project-card my-4 w-3/4">
       <div className="bg-gray-100 p-4 rounded-lg ">
         <a href={siteUrl} target="_blank" className="">
           <Image
