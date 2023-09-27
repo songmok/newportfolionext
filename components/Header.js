@@ -1,9 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
 import DarkModeButton from "../utils/DarkModeButton";
-
+import useViewPort from "../hook/useViewPort";
+import MobDarkModeButton from "../utils/MobDarkModeButton";
 const Header = () => {
+  const { mobile } = useViewPort();
+
   return (
     <>
       <Head>
@@ -18,33 +20,59 @@ const Header = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="text-gray-600 body-font">
-        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <Link legacyBehavior href="/">
-            <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-              <span className="ml-3 text-xl">SONGMOK</span>
-            </a>
-          </Link>
-          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <header className="text-gray-600 body-font relative">
+        {mobile ? (
+          <>
+            <div className="container mx-auto  p-5  ">
+              <div className="flex justify-between mx-auto items-center mb-4">
+                <Link legacyBehavior href="/">
+                  <a className="flex title-font font-medium text-gray-900 ">
+                    <span className="ml-3 text-xl">SONGMOK</span>
+                  </a>
+                </Link>
+                <MobDarkModeButton />
+              </div>
+              <nav className="flex flex-wrap items-center text-base justify-center">
+                <Link legacyBehavior href="/">
+                  <a className="mr-5 hover:text-gray-900">Home</a>
+                </Link>
+                <Link legacyBehavior href="/stacks">
+                  <a className="mr-5 hover:text-gray-900">Stacks</a>
+                </Link>
+                <Link legacyBehavior href="/portfolio">
+                  <a className="mr-5 hover:text-gray-900">Portfolio</a>
+                </Link>
+                <Link legacyBehavior href="/life">
+                  <a className="mr-5 hover:text-gray-900">Life</a>
+                </Link>
+              </nav>
+            </div>
+          </>
+        ) : (
+          <div className="container mx-auto flex flex-wrap p-5 flex-row items-center">
             <Link legacyBehavior href="/">
-              <a className="mr-5 hover:text-gray-900">Home</a>
+              <a className="flex title-font font-medium items-center text-gray-900 mb-4">
+                <span className="ml-3 text-xl">SONGMOK</span>
+              </a>
             </Link>
-            <Link legacyBehavior href="/stacks">
-              <a className="mr-5 hover:text-gray-900">Stacks</a>
-            </Link>
-            <Link legacyBehavior href="/portfolio">
-              <a className="mr-5 hover:text-gray-900">Portfolio</a>
-            </Link>
-            <Link legacyBehavior href="/life">
-              <a className="mr-5 hover:text-gray-900">Life</a>
-            </Link>
-            {/* <Link legacyBehavior href="/vision">
-              <a className="mr-5 hover:text-gray-900">Vision</a>
-            </Link> */}
-          </nav>
-          <DarkModeButton />
-          {/* dark 모드 적용 */}
-        </div>
+            <nav className="ml-auto flex flex-wrap items-center text-base justify-center">
+              <Link legacyBehavior href="/">
+                <a className="mr-5 hover:text-gray-900">Home</a>
+              </Link>
+              <Link legacyBehavior href="/stacks">
+                <a className="mr-5 hover:text-gray-900">Stacks</a>
+              </Link>
+              <Link legacyBehavior href="/portfolio">
+                <a className="mr-5 hover:text-gray-900">Portfolio</a>
+              </Link>
+              <Link legacyBehavior href="/life">
+                <a className="mr-5 hover:text-gray-900">Life</a>
+              </Link>
+              <DarkModeButton />
+            </nav>
+            {/* dark 모드 적용 */}
+          </div>
+        )}
       </header>
     </>
   );

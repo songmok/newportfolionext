@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes";
 
-const DarkModeButton = () => {
+const MobDarkModeButton = () => {
   const { theme, setTheme } = useTheme();
 
   return (
@@ -10,7 +10,7 @@ const DarkModeButton = () => {
         onClick={() => {
           setTheme(theme === "dark" ? "light" : "dark");
         }}
-        className="inline-flex items-center relative border-0 py-2 px-5 rounded text-base focus:outline-none"
+        className="relative ml-auto border-0 py-2 px-5 rounded text-base focus:outline-none"
       >
         {/* light theme */}
         {theme !== `dark` ? (
@@ -43,4 +43,4 @@ const DarkModeButton = () => {
   );
 };
 
-export default DarkModeButton;
+export default MobDarkModeButton;
